@@ -10,6 +10,8 @@ extensions = [
     'sphinxcontrib.plantuml',
 ]
 
+html_baseurl = "https://khalandar-d.github.io/Interactive-Autonomy/"
+
 # Optional (if plantuml not in PATH)
 plantuml = 'plantuml'
 
