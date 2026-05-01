@@ -1,0 +1,36 @@
+@startuml
+left to right direction
+
+actor User
+
+rectangle "Particle Filter System" {
+
+    User --> (Start Simulation)
+    User --> (Pause Simulation)
+    User --> (Reset Simulation)
+
+    User --> (Adjust Motion Noise)
+    User --> (Adjust Sensor Noise)
+    User --> (Toggle Adaptive Particles)
+    User --> (Adjust Simulation Speed)
+
+    (Start Simulation) --> (Move Robot)
+    (Start Simulation) --> (Generate Sensor Measurements)
+
+    (Move Robot) --> (Predict Particles)
+    (Generate Sensor Measurements) --> (Update Weights)
+
+    (Predict Particles) --> (Update Weights)
+    (Update Weights) --> (Resample Particles)
+
+    (Resample Particles) --> (Adapt Particle Count)
+
+    (Adapt Particle Count) --> (Estimate State)
+
+    (Estimate State) --> (Compute Uncertainty)
+    (Estimate State) --> (Visualize State)
+
+    (Compute Uncertainty) --> (Visualize State)
+}
+
+@enduml
